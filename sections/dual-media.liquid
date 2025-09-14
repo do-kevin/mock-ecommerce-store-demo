@@ -1,0 +1,54 @@
+<article style="display: flex">
+  <div style="width: 50%; background: #fed1d1">
+    {% if section.settings['first-slide'] and section.settings['first-slide-mobile'] %}
+      <picture>
+        <source
+          srcset="{{ section.settings['first-slide'] | image_url: width: 800, height: 420 }}"
+          media="(min-width: 768px)"
+          sizes="(min-width: 768px) 50vw, 100vw">
+        <img
+          src="{{ section.settings['first-slide-mobile'] | image_url: width: 375, height: 375 }}"
+          height="275"
+          width="100%"
+          style="height: auto"
+      ></picture>
+    {% else %}
+      <p>First slide image has not been set.</p>
+    {% endif %}
+  </div>
+  <div style="width: 50%; background: #c0c0fd"></div>
+</article>
+
+{% schema %}
+{
+  "name": "Dual Media",
+  "settings": [
+    {
+      "label": "Label",
+      "id": "cta-text",
+      "type": "text",
+      "default": "SHOP NOW"
+    },
+    {
+      "label": "Link",
+      "id": "cta-link",
+      "type": "text",
+      "default": "/"
+    },
+    {
+      "type": "header",
+      "content": "Slides"
+    },
+    {
+      "label": "First slide",
+      "id": "first-slide",
+      "type": "image_picker"
+    },
+    {
+      "label": "First slide mobile",
+      "id": "first-slide-mobile",
+      "type": "image_picker"
+    }
+  ]
+}
+{% endschema %}

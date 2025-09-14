@@ -6,7 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */ {
   "sections": {
     "hero_G7CAX9": {
       "type": "hero",
@@ -52,10 +52,7 @@
           "blocks": {}
         }
       },
-      "block_order": [
-        "text_KJqzT8",
-        "button_cTVbXA"
-      ],
+      "block_order": ["text_KJqzT8", "button_cTVbXA"],
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
@@ -128,10 +125,7 @@
           "blocks": {}
         }
       },
-      "block_order": [
-        "text_jcLMz6",
-        "button_ynEdzM"
-      ],
+      "block_order": ["text_jcLMz6", "button_ynEdzM"],
       "name": "Pull quote",
       "settings": {
         "content_direction": "column",
@@ -341,10 +335,7 @@
               ]
             }
           },
-          "block_order": [
-            "product_card_gallery_xE4xwn",
-            "group_63jLqN"
-          ]
+          "block_order": ["product_card_gallery_xE4xwn", "group_63jLqN"]
         }
       },
       "name": "Featured collection",
@@ -509,10 +500,7 @@
                   "blocks": {}
                 }
               },
-              "block_order": [
-                "text_pp7GaT",
-                "text_VzkkLz"
-              ]
+              "block_order": ["text_pp7GaT", "text_VzkkLz"]
             },
             "button_UetELt": {
               "type": "button",
@@ -529,11 +517,7 @@
               "blocks": {}
             }
           },
-          "block_order": [
-            "text_eEy4hr",
-            "group_WG7cBJ",
-            "button_UetELt"
-          ]
+          "block_order": ["text_eEy4hr", "group_WG7cBJ", "button_UetELt"]
         }
       },
       "name": "t:names.media_with_text",
@@ -643,10 +627,7 @@
               "blocks": {}
             }
           },
-          "block_order": [
-            "text_J8QkkF",
-            "text_EjD6fk"
-          ]
+          "block_order": ["text_J8QkkF", "text_EjD6fk"]
         },
         "static-collection-card": {
           "type": "_collection-card",
@@ -707,14 +688,10 @@
               "blocks": {}
             }
           },
-          "block_order": [
-            "collection_title_dNxGHW"
-          ]
+          "block_order": ["collection_title_dNxGHW"]
         }
       },
-      "block_order": [
-        "group_KNYFmf"
-      ],
+      "block_order": ["group_KNYFmf"],
       "name": "t:names.collections_bento",
       "settings": {
         "layout_type": "bento",
@@ -830,10 +807,7 @@
               "blocks": {}
             }
           },
-          "block_order": [
-            "text_kW34Li",
-            "text_zjYTMm"
-          ]
+          "block_order": ["text_kW34Li", "text_zjYTMm"]
         },
         "static-collection-card": {
           "type": "_collection-card",
@@ -894,14 +868,10 @@
               "blocks": {}
             }
           },
-          "block_order": [
-            "collection_title_kkgEBG"
-          ]
+          "block_order": ["collection_title_kkgEBG"]
         }
       },
-      "block_order": [
-        "group_JWrF3Q"
-      ],
+      "block_order": ["group_JWrF3Q"],
       "name": "t:names.collections_grid",
       "settings": {
         "layout_type": "grid",
@@ -1063,21 +1033,13 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": [
-                    "product_title_3HfJxT",
-                    "price_DVegNM"
-                  ]
+                  "block_order": ["product_title_3HfJxT", "price_DVegNM"]
                 }
               },
-              "block_order": [
-                "product_card_gallery_KaLiqF",
-                "group_rpMn3F"
-              ]
+              "block_order": ["product_card_gallery_KaLiqF", "group_rpMn3F"]
             }
           },
-          "block_order": [
-            "product_card_JBUCEK"
-          ]
+          "block_order": ["product_card_JBUCEK"]
         }
       },
       "name": "t:names.media_with_text",
@@ -1091,11 +1053,16 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "dual-media": {
+      "type": "dual-media",
+      "settings": {}
     }
   },
   "order": [
     "hero_G7CAX9",
     "section",
+    "dual-media",
     "product_list_YidTcf",
     "media_with_content_HP7Qpp",
     "collection_list_3ejxRy",
