@@ -1,0 +1,15 @@
+{
+  "name": "mock-ecommerce-store-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".prettierrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kevin Do",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.10.0"
+  }
+}
