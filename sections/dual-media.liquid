@@ -1,23 +1,54 @@
 <article style="display: flex">
   <div style="width: 50%; background: #fed1d1">
-    {% if section.settings['first-slide'] and section.settings['first-slide-mobile'] %}
+    {% assign left_slide_blocks = section.blocks | where: 'type', 'dual-media-left-slide' %}
+    {% for left_block in left_slide_blocks %}
       <picture>
         <source
-          srcset="{{ section.settings['first-slide'] | image_url: width: 800, height: 420 }}"
+          srcset="{{ left_block.settings['desktop-image'] | image_url: width: 800, height: 420 }}"
           media="(min-width: 768px)"
           sizes="(min-width: 768px) 50vw, 100vw">
         <img
-          src="{{ section.settings['first-slide-mobile'] | image_url: width: 375, height: 375 }}"
+          src="{{ left_block.settings['mobile-image'] | image_url: width: 375, height: 375 }}"
           height="275"
           width="100%"
           style="height: auto"
       ></picture>
-    {% else %}
-      <p>First slide image has not been set.</p>
-    {% endif %}
+    {% endfor %}
   </div>
-  <div style="width: 50%; background: #c0c0fd"></div>
+  <div style="width: 50%; background: #c0c0fd">
+    {% assign right_slide_blocks = section.blocks | where: 'type', 'dual-media-right-slide' %}
+    {% for right_block in right_slide_blocks %}
+      <picture>
+        <source
+          srcset="{{ right_block.settings['desktop-image'] | image_url: width: 800, height: 420 }}"
+          media="(min-width: 768px)"
+          sizes="(min-width: 768px) 50vw, 100vw">
+        <img
+          src="{{ right_block.settings['mobile-image'] | image_url: width: 375, height: 375 }}"
+          height="275"
+          width="100%"
+          style="height: auto"
+      ></picture>
+    {% endfor %}
+  </div>
 </article>
+
+<script>
+    console.log('Section data:', {
+    id: {{ section.id | json }},
+    type: {{ section.type | json }},
+    settings: {{ section.settings | json }},
+    blocks: [
+      {% for block in section.blocks %}
+        {
+          id: {{ block.id | json }},
+          type: {{ block.type | json }},
+          settings: {{ block.settings | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  });
+</script>
 
 {% schema %}
 {
@@ -34,20 +65,40 @@
       "id": "cta-link",
       "type": "text",
       "default": "/"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Left slide",
+      "type": "dual-media-left-slide",
+      "settings": [
+        {
+          "label": "Desktop image",
+          "id": "desktop-image",
+          "type": "image_picker"
+        },
+        {
+          "label": "Mobile image",
+          "id": "mobile-image",
+          "type": "image_picker"
+        }
+      ]
     },
     {
-      "type": "header",
-      "content": "Slides"
-    },
-    {
-      "label": "First slide",
-      "id": "first-slide",
-      "type": "image_picker"
-    },
-    {
-      "label": "First slide mobile",
-      "id": "first-slide-mobile",
-      "type": "image_picker"
+      "name": "Right slide",
+      "type": "dual-media-right-slide",
+      "settings": [
+        {
+          "label": "Desktop image",
+          "id": "desktop-image",
+          "type": "image_picker"
+        },
+        {
+          "label": "Mobile image",
+          "id": "mobile-image",
+          "type": "image_picker"
+        }
+      ]
     }
   ]
 }
